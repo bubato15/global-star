@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ReviewCard } from "./components/ReviewCard.tsx";
 import { TeamMember } from "./components/TeamMember.tsx";
-import { Statistic } from "./components/Statistic.tsx";
+import { GlobalStarHero } from "./components/GlobalStarHero.tsx";
 import { FeatureCard } from "./components/FeatureCard.tsx";
 import { Hero } from "./components/Hero.tsx";
 import { TelecomPaymentSection } from "./components/TelecomPaymentSection.tsx";
@@ -76,85 +76,7 @@ const features = [
 export const GlobalStar = () => {
   return (
     <main className="flex overflow-hidden flex-col justify-center items-center bg-white">
-      <nav className="flex overflow-hidden flex-col pb-24 w-full bg-slate-50 max-md:max-w-full">
-        <div className="flex overflow-hidden flex-col justify-center items-center px-16 py-7 w-full bg-slate-50 max-md:px-5 max-md:max-w-full">
-          <div className="flex flex-wrap gap-5 justify-between w-full max-w-[1200px] max-md:max-w-full">
-            <div className="flex flex-wrap gap-10 items-center max-md:max-w-full">
-              <div className="flex gap-3 items-center self-stretch py-2.5 my-auto text-3xl font-semibold tracking-tighter leading-tight text-center text-stone-950">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e8d6eaa1642f538cff9955096e470bdc4ae5d4038915c2c583683c23c6aed24?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
-                  alt="Global Star logo"
-                  className="object-contain shrink-0 self-stretch my-auto aspect-square w-[42px]"
-                />
-                <div className="self-stretch my-auto">Global Star</div>
-              </div>
-              <div className="flex gap-8 items-start self-stretch my-auto text-base text-gray-500 min-w-[240px] max-md:max-w-full">
-                <div className="font-bold text-blue-600">Giới thiệu</div>
-                <div>Đối tác</div>
-                <div>Sản phẩm</div>
-                <div>Đại diện</div>
-                <div>Review</div>
-              </div>
-            </div>
-            <button className="flex gap-8 items-center self-start mt-1.5 text-base font-bold text-center text-white">
-              <div className="gap-2 self-stretch px-8 py-4 my-auto bg-blue-600 rounded-lg w-[126px] max-md:px-5">
-                Liên hệ
-              </div>
-            </button>
-          </div>
-        </div>
-
-        {/* Hero Section */}
-        <section className="flex flex-wrap gap-5 justify-between self-center mt-20 w-full max-w-[1200px] max-md:mt-10 max-md:max-w-full">
-          <div className="flex gap-8 justify-center items-start p-4 my-auto bg-white rounded-2xl shadow-2xl">
-            <div className="flex gap-2 items-end">
-              <div className="flex w-[76px]">
-                <div className="flex shrink-0 -mr-5 w-12 h-12 bg-red-600 rounded-full" />
-                <div className="flex shrink-0 w-12 h-12 bg-amber-300 rounded-full" />
-              </div>
-              <div className="flex flex-col justify-center text-sm font-medium text-gray-500">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/6fb263c5013350fe7c02fc563a51d467daa29cc78f40fd91ae3474d394108d3f?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
-                  alt=""
-                  className="object-contain aspect-[2.25] w-[54px]"
-                />
-                <div className="mt-2">Mastercard ~ 0259</div>
-              </div>
-            </div>
-            <div className="text-sm font-bold text-lime-600">+ $4 843.93</div>
-          </div>
-
-          <div className="flex flex-col max-md:max-w-full">
-            <div className="flex flex-col w-full max-md:max-w-full">
-              <div className="flex flex-col max-w-full w-[555px]">
-                <h1 className="text-6xl font-semibold tracking-tighter leading-[77px] text-stone-950 max-md:max-w-full max-md:text-4xl max-md:leading-[53px]">
-                  Chạm công nghệ
-                  <br />
-                  Mở tương lai
-                </h1>
-                <p className="mt-6 text-base font-medium leading-6 text-gray-500 max-md:max-w-full">
-                  Global Star cam kết đồng hành cùng khách hàng trên hành trình
-                  đổi mới, mang lại sự tối ưu trong quản lý tài chính, hiệu quả
-                  trong thanh toán và mở ra những cơ hội phát triển bền vững.
-                </p>
-              </div>
-              <button className="flex gap-6 items-start mt-10 max-w-full text-base font-bold text-center text-white w-[218px]">
-                <div className="gap-2 self-stretch px-8 py-4 bg-blue-600 rounded-lg w-[218px] max-md:px-5">
-                  Tìm hiểu ngay!
-                </div>
-              </button>
-            </div>
-            <div className="flex gap-10 justify-center items-center self-start mt-14 text-stone-950 max-md:mt-10">
-              <Statistic number="10tr+" label="Khách hàng" />
-              <div className="shrink-0 self-stretch my-auto w-0 h-12 border border-solid bg-zinc-300 border-zinc-300" />
-              <Statistic number="20+" label="Giải thưởng danh giá" />
-            </div>
-          </div>
-        </section>
-      </nav>
-
+      <GlobalStarHero />
       <Hero />
       <TelecomPaymentSection />
 
@@ -174,6 +96,14 @@ export const GlobalStar = () => {
                   nghiệp, đưa ra tư vấn, hỗ trợ cơ cấu đồng thời cung cấp giải
                   pháp tài chính cho doanh nghiệp.
                 </p>
+                <div className="relative">
+                  <img src="/Giải pháp tài chính.png" alt="Giải pháp tài chính.png" className="w-full h-auto" style={{maxWidth: '90%', marginTop: '20px'}}/>
+                  <img src="/Chart.png" alt="Giải pháp tài chính.png" style={{   
+                    position: 'absolute',
+                    top: '100px',
+                    left: 'calc(50% - 50px)'
+                  }}/>
+                </div>
               </div>
             </div>
           </div>
@@ -191,7 +121,7 @@ export const GlobalStar = () => {
 
       {/* Team Section */}
       <section className="flex overflow-hidden flex-col justify-center items-center px-20 py-28 w-full bg-slate-50 max-md:px-5 max-md:py-24 max-md:max-w-full">
-        <div className="flex flex-col mb-0 w-full max-w-[1200px] max-md:mb-2.5 max-md:max-w-full">
+        <div className="flex flex-col mb-0 w-full max-md:mb-2.5 max-md:max-w-full">
           <div className="flex flex-wrap items-center w-full">
             <h2 className="self-stretch my-auto text-5xl font-bold leading-[58px] text-stone-950 w-[552px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
               Làm quen với những đại diện của chúng tôi

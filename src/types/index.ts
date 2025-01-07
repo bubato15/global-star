@@ -43,3 +43,19 @@ export interface AchievementsData {
   title: string;
   achievements: AchievementCardProps[];
 }
+
+export interface StatisticProps {
+  value: string;
+  label: string;
+}
+
+export interface NavigationItemProps {
+  label: string;
+  isActive?: boolean;
+}
+
+export interface CardProps {
+  cardType: string;
+  cardNumber: string;
+  amount: string;
+}
