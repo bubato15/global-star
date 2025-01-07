@@ -6,6 +6,8 @@ import { FeatureCard } from "./components/FeatureCard.tsx";
 import { Hero } from "./components/Hero.tsx";
 import { TelecomPaymentSection } from "./components/TelecomPaymentSection.tsx";
 import { Achievements } from "./components/Achievements.tsx";
+import { useState, useRef, useEffect } from "react";
+
 const teamMembers = [
   {
     image:
@@ -50,6 +52,70 @@ const reviews = [
     review:
       "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
   },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Savannah Nguyen",
+    role: "CEO Sans Brothers",
+    review:
+      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Eleanor Pena",
+    role: "CEO Sans Brothers",
+    review:
+      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Savannah Nguyen",
+    role: "CEO Sans Brothers",
+    review:
+      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Eleanor Pena",
+    role: "CEO Sans Brothers",
+    review:
+      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Savannah Nguyen",
+    role: "CEO Sans Brothers",
+    review:
+      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Eleanor Pena",
+    role: "CEO Sans Brothers",
+    review:
+      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Savannah Nguyen",
+    role: "CEO Sans Brothers",
+    review:
+      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Eleanor Pena",
+    role: "CEO Sans Brothers",
+    review:
+      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
+  },
 ];
 
 const features = [
@@ -74,6 +140,30 @@ const features = [
 ];
 
 export const GlobalStar = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const reviewsContainerRef = useRef<HTMLDivElement>(null);
+
+  const handlePagingClick = (index: number) => {
+    setActiveIndex(index);
+    if (reviewsContainerRef.current) {
+      const scrollWidth = reviewsContainerRef.current.scrollWidth;
+      const scrollTo = (scrollWidth / 3) * index;
+      reviewsContainerRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => {
+        const newIndex = (prevIndex + 1) % 3; // Cycle through 0, 1, 2
+        handlePagingClick(newIndex);
+        return newIndex;
+      });
+    }, 10000); // Change page every 1 second
+
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
+
   return (
     <main className="flex overflow-hidden flex-col justify-center items-center bg-white">
       <GlobalStarHero />
@@ -144,7 +234,7 @@ export const GlobalStar = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="flex overflow-hidden flex-col justify-end items-center py-28 w-full bg-white max-md:py-24 max-md:max-w-full">
+      <section className="flex overflow-hidden flex-col justify-end items-center py-28 w-full bg-white max-md:py-24 max-md:max-w-full px-20">
         <div className="text-sm font-bold text-center text-blue-600">
           REVIEW
         </div>
@@ -152,9 +242,25 @@ export const GlobalStar = () => {
           Khách hàng nói gì về <br />
           Global Star?
         </h2>
-        <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10">
-          {reviews.map((review, index) => (
-            <ReviewCard key={index} {...review} />
+        <div className="w-full overflow-x-hidden" ref={reviewsContainerRef}>
+          <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
+            {reviews.map((review, index) => (
+              <ReviewCard key={index} {...review} />
+            ))}
+          </div>
+          <div className="flex gap-10 items-center self-stretch mt-8 max-md:mt-10 w-fit">
+            {reviews.map((review, index) => (
+              <ReviewCard key={index} {...review} />
+            ))}
+          </div>
+        </div>
+        <div className="paging flex justify-center gap-2 mt-4">
+          {[0, 1, 2].map((index) => (
+            <div
+              key={index}
+              className={`paging-item w-12 h-1 ${activeIndex === index ? 'bg-blue-600' : 'bg-blue-200'}`}
+              onClick={() => handlePagingClick(index)}
+            ></div>
           ))}
         </div>
       </section>
