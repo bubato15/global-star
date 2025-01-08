@@ -212,20 +212,18 @@ export const GlobalStar = () => {
       {/* Team Section */}
       <section className="flex overflow-hidden flex-col justify-center items-center px-20 py-28 w-full bg-slate-50 max-md:px-5 max-md:py-24 max-md:max-w-full">
         <div className="flex flex-col mb-0 w-full max-md:mb-2.5 max-md:max-w-full">
-          <div className="flex flex-wrap items-center w-full">
-            <h2 className="self-stretch my-auto text-5xl font-bold leading-[58px] text-stone-950 w-[552px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]">
+          <div className="flex flex-wrap items-center w-full gap-4 justify-center">
+            <h2 className="self-stretch my-auto text-5xl font-bold leading-[58px] text-stone-950 w-[552px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px] mb-2">
               Làm quen với những đại diện của chúng tôi
             </h2>
-            <div className="flex flex-1 shrink self-stretch basis-0 h-[116px] w-[101px]" />
-            <p className="self-stretch my-auto text-base font-medium leading-7 text-gray-500 w-[547px] max-md:max-w-full">
-              Chúng tôi quy tụ những chuyên gia hàng đầu với nhiều năm kinh
-              nghiệm, am hiểu sâu sắc ngành nghề và giàu tầm nhìn chiến lược.
+            <div className="h-[60px] w-[20px]" />
+            <p className="self-stretch my-auto text-base font-medium leading-7 text-gray-500 w-[547px] max-md:max-w-full mb-2">
+              Chúng tôi quy tụ những chuyên gia hàng đầu với nhiều năm kinh nghiệm, am hiểu sâu sắc ngành nghề và giàu tầm nhìn chiến lược.
               <br />
-              Đội ngũ cam kết đồng hành cùng khách hàng, mang lại giá trị vượt
-              trội và định hướng thành công bền vững.
+              Đội ngũ cam kết đồng hành cùng khách hàng, mang lại giá trị vượt trội và định hướng thành công bền vững.
             </p>
           </div>
-          <div className="flex flex-wrap gap-8 items-start mt-14 max-md:mt-10 max-md:max-w-full">
+          <div className="flex flex-wrap gap-8 justify-center items-start mt-14 max-md:mt-10 max-md:max-w-full">
             {teamMembers.map((member, index) => (
               <TeamMember key={index} {...member} />
             ))}
