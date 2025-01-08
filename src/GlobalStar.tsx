@@ -76,6 +76,30 @@ const reviews = [
     review:
       "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
   },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Eleanor Pena",
+    role: "CEO Sans Brothers",
+    review:
+      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Savannah Nguyen",
+    role: "CEO Sans Brothers",
+    review:
+      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
+  },
+  {
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    name: "Savannah Nguyen",
+    role: "CEO Sans Brothers",
+    review:
+      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
+  },
 ];
 
 const features = [
@@ -202,12 +226,12 @@ export const GlobalStar = () => {
         </h2>
         <div className="w-full overflow-x-hidden hidden md:block" ref={reviewsContainerRef}>
           <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
-            {reviews.map((review, index) => (
+            {reviews.slice(0, reviews.length/2).map((review, index) => (
               <ReviewCard key={index} {...review} />
             ))}
           </div>
           <div className="flex gap-10 items-center self-stretch mt-8 max-md:mt-10 w-fit">
-            {reviews.map((review, index) => (
+            {reviews.slice(reviews.length/2).map((review, index) => (
               <ReviewCard key={index} {...review} />
             ))}
           </div>
