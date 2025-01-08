@@ -10,9 +10,9 @@ export const TelecomPaymentSection: React.FC = () => {
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/2104ee8c3b1a4036982aceb97afa3b1c/7f4fbe2261a31df567a34f3e64952ce765244206e4ff56ab5edcbbfe6c48f8c8?apiKey=2104ee8c3b1a4036982aceb97afa3b1c&"
           alt="Telecom payment services illustration"
-          className="object-contain self-stretch my-auto aspect-[0.94] min-w-[240px] w-[437px] max-md:max-w-full"
+          className="object-contain self-stretch my-auto aspect-[0.94] max-md:max-w-full"
         />
-        <div className="flex flex-col self-stretch my-auto min-w-[240px] w-[486px] max-md:max-w-full">
+        <div className="flex flex-col self-stretch my-auto max-md:max-w-full">
           <ServiceDescription
             title="Dịch vụ thanh toán viễn thông"
             description="Là đối tác chiến lược của các nhà mạng lớn như Viettel, Vinaphone, Mobifone đồng thời hỗ trợ, cung cấp dịch vụ top-up mã thẻ và thẻ cào."

@@ -76,46 +76,6 @@ const reviews = [
     review:
       "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
   },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Eleanor Pena",
-    role: "CEO Sans Brothers",
-    review:
-      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Eleanor Pena",
-    role: "CEO Sans Brothers",
-    review:
-      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Eleanor Pena",
-    role: "CEO Sans Brothers",
-    review:
-      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
-  },
 ];
 
 const features = [
@@ -232,7 +192,7 @@ export const GlobalStar = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="flex overflow-hidden flex-col justify-end items-center py-28 w-full bg-white max-md:py-24 max-md:max-w-full px-20">
+      <section className="flex overflow-hidden flex-col justify-end items-center py-28 w-full bg-white max-md:py-24 max-md:max-w-full px-20 max-md:px-10">
         <div className="text-sm font-bold text-center text-blue-600">
           REVIEW
         </div>
@@ -240,7 +200,7 @@ export const GlobalStar = () => {
           Khách hàng nói gì về <br />
           Global Star?
         </h2>
-        <div className="w-full overflow-x-hidden" ref={reviewsContainerRef}>
+        <div className="w-full overflow-x-hidden hidden md:block" ref={reviewsContainerRef}>
           <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
             {reviews.map((review, index) => (
               <ReviewCard key={index} {...review} />
@@ -252,13 +212,18 @@ export const GlobalStar = () => {
             ))}
           </div>
         </div>
-        <div className="paging flex justify-center gap-2 mt-4">
+        <div className="paging flex justify-center gap-2 mt-4 hidden md:flex">
           {[0, 1, 2].map((index) => (
             <div
               key={index}
               className={`paging-item w-12 h-1 ${activeIndex === index ? 'bg-blue-600' : 'bg-blue-200'}`}
               onClick={() => handlePagingClick(index)}
             ></div>
+          ))}
+        </div>
+        <div className="md:hidden items-center self-stretch mt-16 max-md:mt-10 w-fit">
+          {reviews.map((review, index) => (
+            <ReviewCard key={index} {...review} />
           ))}
         </div>
       </section>

@@ -6,7 +6,7 @@ export const ServiceDescription: React.FC<ServiceDescriptionProps> = ({
   description
 }) => {
   return (
-    <div className="flex flex-col max-w-full w-[486px]">
+    <div className="flex flex-col max-w-[486px]">
       <h1 className="text-4xl font-semibold tracking-tighter leading-[52px] text-stone-950 max-md:max-w-full">
         {title}
       </h1>

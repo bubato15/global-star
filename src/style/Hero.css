@@ -9,6 +9,12 @@
     padding: 2rem;
     background-color: #1053F3;
   }
+
+  @media (max-width: 768px) {
+    .carousel {
+      padding: 0;
+    }
+  }
   
   .carousel::before,
   .carousel::after {
