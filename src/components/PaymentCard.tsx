@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { CardProps } from '../types';
+import '../style/PaymentCard.css';
 
 export const PaymentCard: React.FC<CardProps> = ({ cardType, cardNumber, amount }) => (
-  <div className="flex gap-8 justify-center items-start p-4 bg-white rounded-2xl shadow-2xl" style={{width: '348px'}}>
+  <div className="flex gap-8 justify-center items-start p-4 bg-white rounded-2xl shadow-2xl payment-card-custom">
     <div className="flex gap-2 items-end">
       <div className="flex w-[76px]">
         <div className="flex shrink-0 -mr-5 w-12 h-12 bg-red-600 rounded-full" />
