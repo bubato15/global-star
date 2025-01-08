@@ -21,18 +21,22 @@ export const GlobalStarHero: React.FC = () => {
   const[isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <section className="flex overflow-hidden flex-col items-center pb-24 bg-slate-50 w-full px-20 max-md:px-5">
-      <nav className="flex justify-between items-center w-full bg-slate-50 px-5 py-7 max-md:px-5">
+    <header className="flex overflow-hidden flex-col items-center pb-24 bg-slate-50 w-full px-20 max-md:px-5">
+      <nav className="flex justify-between items-center w-full bg-slate-50 px-5 py-7 max-md:px-5" role="navigation" aria-label="Main navigation">
         <div className="flex items-center space-x-8">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/2104ee8c3b1a4036982aceb97afa3b1c/8e8d6eaa1642f538cff9955096e470bdc4ae5d4038915c2c583683c23c6aed24?apiKey=2104ee8c3b1a4036982aceb97afa3b1c&"
-            alt="Global Star logo"
-            className="object-contain aspect-square w-[42px] max-md:w-[32px]"
-          />
-          <div className="ml-2 text-3xl font-semibold tracking-tighter leading-tight text-stone-950 max-md:text-2xl">
+          <a href="/" aria-label="Global Star home">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/2104ee8c3b1a4036982aceb97afa3b1c/8e8d6eaa1642f538cff9955096e470bdc4ae5d4038915c2c583683c23c6aed24?apiKey=2104ee8c3b1a4036982aceb97afa3b1c&"
+              alt="Global Star logo"
+              className="object-contain aspect-square w-[42px] max-md:w-[32px]"
+              width="42"
+              height="42"
+            />
+          </a>
+          <h1 className="ml-2 text-3xl font-semibold tracking-tighter leading-tight text-stone-950 max-md:text-2xl">
             Global Star
-          </div>
+          </h1>
           <div className="hidden md:flex md:space-x-8">
             {navigationItems.map((item, index) => (
               <NavigationItem key={index} {...item} />
@@ -63,7 +67,7 @@ export const GlobalStarHero: React.FC = () => {
         ))}
       </div>
 
-      <section className="mt-20 w-full max-md:mt-10 max-md:max-w-full">
+      <main className="mt-20 w-full max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
           <div className="flex flex-col w-[33%] max-md:w-full">
             <img 
@@ -116,7 +120,7 @@ export const GlobalStarHero: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       <section className="flex gap-10 justify-center items-center mt-14 ml-48 text-stone-950 max-md:mt-10 max-md:ml-0">
         {statistics.map((stat, index) => (
@@ -128,6 +132,6 @@ export const GlobalStarHero: React.FC = () => {
           </React.Fragment>
         ))}
       </section>
-    </section>
+    </header>
   );
 };
