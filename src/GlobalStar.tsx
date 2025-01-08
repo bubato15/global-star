@@ -7,6 +7,7 @@ import { Hero } from "./components/Hero.tsx";
 import { TelecomPaymentSection } from "./components/TelecomPaymentSection.tsx";
 import { Achievements } from "./components/Achievements.tsx";
 import { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 const teamMembers = [
   {
@@ -124,6 +125,36 @@ const features = [
 ];
 
 export const GlobalStar = () => {
+  const [navigationItems, setNavigationItems] = useState([
+    { label: 'Giới thiệu', id: 'intro', isActive: true },
+    { label: 'Đối tác', id: 'partners', isActive: false },
+    { label: 'Sản phẩm', id: 'products', isActive: false },
+    { label: 'Đại diện', id: 'representative', isActive: false },
+    { label: 'Review', id: 'review', isActive: false },
+  ]);
+  
+  // Hàm để cuộn đến phần tử tương ứng
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      // Cập nhật trạng thái isActive
+      setNavigationItems((prevItems) =>
+        prevItems.map((item) =>
+          item.id === id ? { ...item, isActive: true } : { ...item, isActive: false }
+        )
+      );
+    }
+  };
+
+  const scrollToSectionButton = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
   const [activeIndex, setActiveIndex] = useState(0);
   const reviewsContainerRef = useRef<HTMLDivElement>(null);
 
@@ -147,6 +178,35 @@ export const GlobalStar = () => {
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
+
+
+  // send mail
+  const [email, setEmail] = useState('');
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+   
+    emailjs
+      .send(
+        "datnq_20250107",  // server_id
+        "template_hpj2iin", //templates id
+        {
+          to_name: "admin",
+          message: email
+        },
+        "nMUWd_Si3nDhPefc7" //public key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          alert("Email sent!");
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+          alert("Failed to send email. Please try again later.");
+        }
+      );
+  };
 
   return (
     <>
@@ -176,12 +236,12 @@ export const GlobalStar = () => {
         `}
       </script>
       <main className="flex overflow-hidden flex-col justify-center items-center bg-white">
-        <GlobalStarHero />
+      <GlobalStarHero navigationItems={navigationItems} onMenuClick={scrollToSection} onclickButton={scrollToSectionButton}/>
         <Hero />
         <TelecomPaymentSection />
 
         {/* Features Section */}
-        <section className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
+        <section id="intro" className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col justify-center">
             <div className="flex flex-col w-4/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col max-md:mt-10 max-md:max-w-full">
@@ -220,7 +280,7 @@ export const GlobalStar = () => {
         <Achievements />
 
         {/* Team Section */}
-        <section className="flex overflow-hidden flex-col justify-center items-center px-20 py-28 w-full bg-slate-50 max-md:px-5 max-md:py-24 max-md:max-w-full">
+        <section id="representative" className="flex overflow-hidden flex-col justify-center items-center px-20 py-28 w-full bg-slate-50 max-md:px-5 max-md:py-24 max-md:max-w-full">
           <div className="flex flex-col mb-0 w-full max-md:mb-2.5 max-md:max-w-full">
             <div className="flex flex-wrap items-center w-full gap-4 justify-center">
               <h2 className="self-stretch my-auto text-5xl font-bold leading-[58px] text-stone-950 w-[552px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px] mb-2">
@@ -242,7 +302,7 @@ export const GlobalStar = () => {
         </section>
 
         {/* Reviews Section */}
-        <section className="flex overflow-hidden flex-col justify-end items-center py-28 w-full bg-white max-md:py-24 max-md:max-w-full px-20 max-md:px-10">
+        <section id = "review" className="flex overflow-hidden flex-col justify-end items-center py-28 w-full bg-white max-md:py-24 max-md:max-w-full px-20 max-md:px-10">
           <div className="text-sm font-bold text-center text-blue-600">
             REVIEW
           </div>
@@ -279,7 +339,7 @@ export const GlobalStar = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="flex overflow-hidden flex-col justify-center items-center px-16 py-28 w-full bg-white max-md:px-5 max-md:pt-24 max-md:max-w-full">
+        <section id = "link_mail" className="flex overflow-hidden flex-col justify-center items-center px-16 py-28 w-full bg-white max-md:px-5 max-md:pt-24 max-md:max-w-full">
           <div className="overflow-hidden pl-20 max-w-full bg-blue-600 rounded-2xl w-[1181px] max-md:pl-5">
             <div className="flex gap-5 max-md:flex-col">
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
@@ -292,17 +352,16 @@ export const GlobalStar = () => {
                     hệ với bạn để trao đổi chi tiết, giúp bạn đưa ra quyết định
                     thông minh và hiệu quả nhất.
                   </p>
-                  <form className="flex flex-wrap gap-4 mt-7 max-w-full rounded-[100px] w-[543px]">
-                    <div className="flex flex-col grow shrink-0 self-start mt-4 font-medium text-white basis-0 w-fit">
-                      <label htmlFor="email" className="self-start">
-                        Enter your email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="shrink-0 mt-4 h-px border border-solid border-stone-300 bg-transparent"
-                        aria-label="Enter your email"
-                      />
+                  <form onSubmit={sendEmail} className="flex flex-wrap gap-4 mt-7 max-w-full rounded-[100px] w-[543px]">
+                    <div className="flex flex-col grow shrink-0 self-start mt-4 font-medium text-white basis-0 w-fit">                 
+                    <input
+                      onChange={(e) => setEmail(e.target.value)}
+                      type="email"
+                      id="email"
+                      className="shrink-0 mt-4 border-b-4 border-solid border-stone-300 bg-transparent focus:outline-none focus:border-blue-500 text-white placeholder:text-white placeholder:text-xl"
+                      aria-label="Enter your email"
+                      placeholder="Enter your email"
+                    />
                     </div>
                     <button
                       type="submit"

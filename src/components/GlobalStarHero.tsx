@@ -1,23 +1,27 @@
 import * as React from 'react';
-import { NavigationItem } from './NavigationItem.tsx';
 import { PaymentCard } from './PaymentCard.tsx';
 import { Statistic } from './Statistic.tsx';
 import '../style/GlobalStarHero.css';
 
-const navigationItems = [
-  { label: 'Giới thiệu', isActive: true },
-  { label: 'Đối tác', isActive: false },
-  { label: 'Sản phẩm', isActive: false },
-  { label: 'Đại diện', isActive: false },
-  { label: 'Review', isActive: false }
-];
+interface NavigationItem {
+  label: string;
+  id: string;
+  isActive: boolean;
+}
+
+interface GlobalStarHeroProps {
+  navigationItems: NavigationItem[];
+  onMenuClick: (id: string) => void;
+  onclickButton: (id: string) => void;
+}
 
 const statistics = [
   { value: '10tr+', label: 'Khách hàng' },
   { value: '20+', label: 'Giải thưởng danh giá' }
 ];
 
-export const GlobalStarHero: React.FC = () => {
+
+export const GlobalStarHero: React.FC<GlobalStarHeroProps> = ({ navigationItems, onMenuClick, onclickButton }) => {
   const[isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -38,13 +42,22 @@ export const GlobalStarHero: React.FC = () => {
             Global Star
           </h1>
           <div className="hidden md:flex md:space-x-8">
-            {navigationItems.map((item, index) => (
-              <NavigationItem key={index} {...item} />
-            ))}
+          {navigationItems.map((item, index) => (
+        <div
+          key={index}
+          className={`cursor-pointer ${
+            item.isActive ? 'font-bold text-blue-600' : 'text-gray-500'
+          }`}
+          onClick={() => onMenuClick(item.id)} // Gọi hàm onMenuClick khi click
+        >
+          {item.label}
+        </div>
+      ))}
           </div>
         </div>
         <div className="hidden md:flex">
-          <button className="flex items-center text-base font-bold text-white bg-blue-600 rounded-lg px-8 py-4 max-md:px-5">
+          <button onClick={() => onclickButton('link_mail')} 
+          className="flex items-center text-base font-bold text-white bg-blue-600 rounded-lg px-8 py-4 max-md:px-5">
             Liên hệ
           </button>
         </div>
@@ -62,9 +75,17 @@ export const GlobalStarHero: React.FC = () => {
       </nav>
 
       <div className={`flex-col ${isMenuOpen ? 'flex' : 'hidden'} md:hidden`}>
-        {navigationItems.map((item, index) => (
-          <NavigationItem key={index} {...item} />
-        ))}
+      {navigationItems.map((item, index) => (
+        <div
+          key={index}
+          className={`cursor-pointer ${
+            item.isActive ? 'font-bold text-blue-600' : 'text-gray-500'
+          }`}
+          onClick={() => onMenuClick(item.id)} // Gọi hàm onMenuClick khi click
+        >
+          {item.label}
+        </div>
+      ))}
       </div>
 
       <main className="mt-20 w-full max-md:mt-10 max-md:max-w-full">
