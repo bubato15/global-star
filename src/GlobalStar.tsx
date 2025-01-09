@@ -8,6 +8,8 @@ import { TelecomPaymentSection } from "./components/TelecomPaymentSection.tsx";
 import { Achievements } from "./components/Achievements.tsx";
 import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const teamMembers = [
   {
@@ -133,12 +135,10 @@ export const GlobalStar = () => {
     { label: 'Review', id: 'review', isActive: false },
   ]);
   
-  // Hàm để cuộn đến phần tử tương ứng
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
-      // Cập nhật trạng thái isActive
       setNavigationItems((prevItems) =>
         prevItems.map((item) =>
           item.id === id ? { ...item, isActive: true } : { ...item, isActive: false }
@@ -198,12 +198,13 @@ export const GlobalStar = () => {
       )
       .then(
         (result) => {
-          console.log("Email sent successfully:", result.text);
-          alert("Email sent!");
+          toast.success("Email sent successfully");
+          setEmail('');
         },
         (error) => {
-          console.error("Failed to send email:", error);
-          alert("Failed to send email. Please try again later.");
+          toast.error("Failed to send email");
+          setEmail('');
+          console.log("Failed to send email: ", error)
         }
       );
   };
@@ -358,6 +359,7 @@ export const GlobalStar = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       id="email"
+                      value={email}
                       className="shrink-0 mt-4 border-b-4 border-solid border-stone-300 bg-transparent focus:outline-none focus:border-blue-500 text-white placeholder:text-white placeholder:text-xl pb-[10px] font-normal"
                       aria-label="Enter your email"
                       placeholder="Enter your email"
@@ -391,6 +393,16 @@ export const GlobalStar = () => {
             </div>
           </div>
         </section>
+        <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="colored"
+      />
 
         {/* Footer */}
         <footer className="flex overflow-hidden flex-col w-full bg-white max-md:max-w-full">
