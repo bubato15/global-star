@@ -185,8 +185,11 @@ export const GlobalStar = () => {
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-   
-    emailjs
+    debugger;
+    if(email === null || email === "") {
+      toast.error("Please enter email");
+    } else {
+      emailjs
       .send(
         "datnq_20250107",  // server_id
         "template_hpj2iin", //templates id
@@ -209,6 +212,7 @@ export const GlobalStar = () => {
           console.log("Failed to send email: ", error)
         }
       );
+    }
   };
 
   return (
