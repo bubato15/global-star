@@ -90,7 +90,7 @@ export const GlobalStarHero: React.FC<GlobalStarHeroProps> = ({ navigationItems,
 
       <main className="mt-20 w-full max-md:mt-10 max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col">
-          <div className="flex flex-col w-[33%] max-md:w-full">
+          <div className="flex flex-col w-[33%] max-md:w-full relative">
             <img 
               src="/young-asia-lady-using-phone.png" 
               alt="Young Asia lady using phone"

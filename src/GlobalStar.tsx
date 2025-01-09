@@ -340,7 +340,7 @@ export const GlobalStar = () => {
 
         {/* Contact Form Section */}
         <section id = "link_mail" className="flex overflow-hidden flex-col justify-center items-center px-16 py-28 w-full bg-white max-md:px-5 max-md:pt-24 max-md:max-w-full">
-          <div className="overflow-hidden pl-20 max-w-full bg-blue-600 rounded-2xl w-[1181px] max-md:pl-5">
+          <div className="pl-20 max-w-full bg-blue-600 rounded-2xl w-[1181px] max-md:pl-5">
             <div className="flex gap-5 max-md:flex-col">
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col justify-center self-stretch my-auto mr-0 w-full text-base max-md:mt-10 max-md:max-w-full">
@@ -358,7 +358,7 @@ export const GlobalStar = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       id="email"
-                      className="shrink-0 mt-4 border-b-4 border-solid border-stone-300 bg-transparent focus:outline-none focus:border-blue-500 text-white placeholder:text-white placeholder:text-xl"
+                      className="shrink-0 mt-4 border-b-4 border-solid border-stone-300 bg-transparent focus:outline-none focus:border-blue-500 text-white placeholder:text-white placeholder:text-xl pb-[10px] font-normal"
                       aria-label="Enter your email"
                       placeholder="Enter your email"
                     />
@@ -378,7 +378,7 @@ export const GlobalStar = () => {
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/6933f785f19f85afc63f9052b74ecd7042e4ba287eb73d5837d8d5d9d9376b46?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
                     alt=""
-                    className="object-cover absolute inset-0 size-full"
+                    className="object-cover absolute inset-0 size-full top-28"
                   />
                   <img
                     loading="lazy"
