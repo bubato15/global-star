@@ -22,7 +22,7 @@ const achievementsData: AchievementsData = {
 
 export const Achievements: React.FC = () => {
   return (
-    <section id ="partners" className="flex overflow-hidden flex-col justify-center items-center px-20 pt-20 pb-32 bg-white max-md:px-5 max-md:pb-24">
+    <section className="flex overflow-hidden flex-col justify-center items-center px-20 pt-20 pb-32 bg-white max-md:px-5 max-md:pb-24">
       <div className="flex flex-col items-center max-md:max-w-full">
         <h2 className="text-4xl font-semibold tracking-tighter leading-tight text-center text-stone-950 max-md:max-w-full">
           {achievementsData.title}

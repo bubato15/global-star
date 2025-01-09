@@ -185,7 +185,6 @@ export const GlobalStar = () => {
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    debugger;
     if(email === null || email === "") {
       toast.error("Please enter email");
     } else {
