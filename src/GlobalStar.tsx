@@ -166,7 +166,7 @@ export const GlobalStar = () => {
       reviewsContainerRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
   };
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => {
@@ -411,13 +411,17 @@ export const GlobalStar = () => {
 
         {/* Footer */}
         <footer className="flex overflow-hidden flex-col w-full bg-white max-md:max-w-full">
-          <div className="flex flex-col px-20 pt-20 pb-10 w-full bg-blue-600 fill-blue-600 max-md:px-5 max-md:max-w-full">
+          <div className="flex flex-col overflow-hidden px-20 pt-20 pb-10 w-full bg-blue-600 fill-blue-600 max-md:px-5 max-md:max-w-full relative">
             <div className="flex flex-col max-md:max-w-full">
               <h2 className="gap-10 self-stretch text-6xl font-semibold tracking-tighter text-white leading-[77px] w-[762px] max-md:mr-1.5 max-md:max-w-full max-md:text-4xl max-md:leading-[53px]">
                 Cùng Global Star
-                <br />
                 phát triển vững bền
               </h2>
+              <img 
+                src="/c.png" 
+                alt="Copyright symbol"
+                className="absolute right-20 w-[800px] max-md:hidden"
+              />
               <div className="flex flex-wrap gap-10 items-start self-start mt-16 max-md:mt-10 max-md:max-w-full">
                 <address className="flex flex-wrap gap-3.5 items-start min-w-[240px] max-md:max-w-full not-italic">
                   <div className="flex flex-col items-center w-[46px]">
@@ -468,7 +472,9 @@ export const GlobalStar = () => {
               </div>
               <div className="shrink-0 mt-16 h-0.5 border-2 border-blue-500 border-solid max-md:mt-10 max-md:max-w-full" />
               <div className="flex flex-wrap gap-5 justify-between mt-10 w-full text-base text-white max-md:mr-1 max-md:max-w-full">
-                <div>© Global Star by Mike Tran</div>
+                <div className="flex items-center gap-2">
+                  <span>Global Star by Mike Tran</span>
+                </div>
                 <div className="flex gap-10 items-start">
                   <a href="#terms">Terms & Conditions</a>
                   <a href="#privacy">Privacy Policy</a>
