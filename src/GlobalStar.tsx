@@ -40,69 +40,65 @@ const teamMembers = [
 
 const reviews = [
   {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    image: "/avatar1.png",
+    name: "Nguyễn Văn Hưng",
+    role: "CEO Fingroup",
+    review: "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết."
+  },
+  {
+    image: "/avatar2.png",
+    name: "Trần Thị Mai",
+    role: "CFO VietGas",
+    review: "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận."
+  },
+  {
+    image: "/avatar3.png",
+    name: "Phạm Hoàng Anh",
+    role: "CEO HelloConnect",
+    review: "Điều tôi đánh giá cao nhất là sự chuyên nghiệp và khả năng lắng nghe. Họ hiểu rõ vấn đề của chúng tôi và đưa ra giải pháp phù hợp nhất, không phải những lý thuyết suông."
+  },
+  {
+    image: "/avatar4.png",
+    name: "Lê Minh Khang",
+    role: "CEO BioInvest",
+    review: "Tôi chưa từng nghĩ việc tài cấu trúc tài chính lại có thể mang lại kết quả nhanh chóng đến vậy. Nhờ họ, chúng tôi đã đạt được mục tiêu chỉ trong nhữ thời gian dự kiến."
+  },
+  {
+    image: "/avatar5.png",
+    name: "Nguyễn Thùy Linh",
+    role: "CEO Retail By Solutions",
+    review: "Dịch vụ tư vấn của họ mang lại giá trị thực sự. Đội ngũ của họ không chỉ có chuyên môn mà còn có tâm huyết, giúp chúng tôi giải quyết những vấn đề tưởng như không thể."
+  },
+  {
+    image: "/avatar6.png",
+    name: "Hoàng Văn Nam",
+    role: "Senior Advisor GreenLink",
+    review: "Họ không chỉ giúp chúng tôi tối ưu hóa cơ cấu vốn mà còn đưa ra chiến lược phát triển bền vững. Một dịch vụ mà bất kỳ doanh nghiệp nào cũng nên trải nghiệm."
+  },
+  {
+    image: "/avatar7.png",
+    name: "Phạm Ngọc Bích",
+    role: "CEO Retail Solutions",
+    review: "Những giải pháp họ cung cấp thực sự hiệu quả. Từ một công ty gặp khó khăn, chúng tôi đã vươn lên mạnh mẽ và đạt được tăng trưởng vượt mong đợi."
+  },
+  {
+    image: "/avatar8.png",
+    name: "Trần Đức Long",
+    role: "CEO Startup Sparkle",
+    review: "Sự tận tâm và tính chuyên nghiệp của họ thực sự tầm tối ưu tương đương với chi phí đưa ra giải pháp họ còn theo sát để đảm bảo mọi thứ được thực hiện đúng hướng."
+  },
+  {
+    image: "/avatar9.png",
+    name: "Nguyễn Thanh Hòa",
+    role: "Regional Director Nomura",
+    review: "Tôi đánh giá cao cách tiếp cận của họ: chi tiết, cá nhân hóa và hiệu quả. Công ty chúng tôi đã tiết kiệm được rất nhiều thời gian và nguyên lực."
+  },
+  {
+    image: "/avatar10.png",
     name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Eleanor Pena",
-    role: "CEO Sans Brothers",
-    review:
-      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Eleanor Pena",
-    role: "CEO Sans Brothers",
-    review:
-      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Eleanor Pena",
-    role: "CEO Sans Brothers",
-    review:
-      "Không chỉ tư vấn, họ thực sự đồng hành cùng chúng tôi trong từng giai đoạn. Tầm nhìn chiến lược mà họ mang lại đã giúp công ty tối ưu hóa chi phí và gia tăng lợi nhuận.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
-  {
-    image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/de64b5c48e4a7c6a37be0fb91e36051ffe2782a5368393afd93aaf3e70a09cbd?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Savannah Nguyen",
-    role: "CEO Sans Brothers",
-    review:
-      "Dịch vụ của họ đã thay đổi cách chúng tôi quản lý tài chính. Từ một doanh nghiệp gặp khó khăn về dòng tiền, giờ đây chúng tôi đã có lộ trình rõ ràng và hiệu quả hơn bao giờ hết.",
-  },
+    role: "CFO AlphaEdge Solutions",
+    review: "Họ không chỉ mang đến giải pháp tài chính mà còn là sự an tâm và niềm tin. Chúng tôi biết rằng mình đang hợp tác với những người giỏi nhất trong ngành."
+  }
 ];
 
 const features = [
