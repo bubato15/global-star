@@ -322,11 +322,11 @@ export const GlobalStar = () => {
                   transform: translateX(0);
                 }
                 to {
-                  transform: translateX(-130%);
+                  transform: translateX(-1090%);
                 }
               }
               .animate-scroll {
-                animation: slide 30s linear infinite;
+                animation: slide 240s linear infinite;
                 will-change: transform;
               }
             `}</style>
@@ -334,14 +334,14 @@ export const GlobalStar = () => {
             <div className="animate-scroll">
               {/* First row */}
               <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
-                {[...reviews1].map((review, index) => (
+                {[...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1].map((review, index) => (
                   <ReviewCard key={index} {...review} />
                 ))}
               </div>
 
               {/* Second row */}
               <div className="flex gap-10 items-center self-stretch mt-8 max-md:mt-10 w-fit">
-                {[...reviews2].map((review, index) => (
+                {[...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2].map((review, index) => (
                   <ReviewCard key={`duplicate-${index}`} {...review} />
                 ))}
               </div>
@@ -352,7 +352,7 @@ export const GlobalStar = () => {
               <div
                 key={index}
                 className={`paging-item w-12 h-1 ${activeIndex === index ? 'bg-blue-600' : 'bg-blue-200'}`}
-                onClick={() => handlePagingClick(index)}
+                // onClick={() => handlePagingClick(index)}
               ></div>
             ))}
           </div>
