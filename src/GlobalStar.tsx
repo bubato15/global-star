@@ -322,7 +322,7 @@ export const GlobalStar = () => {
                   transform: translateX(0);
                 }
                 to {
-                  transform: translateX(-1090%);
+                  transform: translateX(-590%);
                 }
               }
               .animate-scroll {
@@ -334,14 +334,14 @@ export const GlobalStar = () => {
             <div className="animate-scroll">
               {/* First row */}
               <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
-                {[...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1].map((review, index) => (
+                {[...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1, ...reviews1].map((review, index) => (
                   <ReviewCard key={index} {...review} />
                 ))}
               </div>
 
               {/* Second row */}
               <div className="flex gap-10 items-center self-stretch mt-8 max-md:mt-10 w-fit">
-                {[...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2].map((review, index) => (
+                {[...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2, ...reviews2].map((review, index) => (
                   <ReviewCard key={`duplicate-${index}`} {...review} />
                 ))}
               </div>
