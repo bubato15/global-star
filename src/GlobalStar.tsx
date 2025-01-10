@@ -347,7 +347,7 @@ export const GlobalStar = () => {
               </div>
             </div>
           </div>
-          <div className="paging flex justify-center gap-2 mt-4 hidden md:flex">
+          {/* <div className="paging flex justify-center gap-2 mt-4 hidden md:flex">
             {[0, 1, 2].map((index) => (
               <div
                 key={index}
@@ -355,7 +355,7 @@ export const GlobalStar = () => {
                 // onClick={() => handlePagingClick(index)}
               ></div>
             ))}
-          </div>
+          </div> */}
           <div className="md:hidden items-center self-stretch mt-16 max-md:mt-10 w-fit">
             {reviews.map((review, index) => (
               <ReviewCard key={index} {...review} />
