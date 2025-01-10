@@ -8,7 +8,7 @@ export const TelecomPaymentSection: React.FC = () => {
       <div className="flex flex-wrap gap-10 items-center max-md:max-w-full">
         <img
           loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/2104ee8c3b1a4036982aceb97afa3b1c/7f4fbe2261a31df567a34f3e64952ce765244206e4ff56ab5edcbbfe6c48f8c8?apiKey=2104ee8c3b1a4036982aceb97afa3b1c&"
+          src="/image_pay.svg"
           alt="Telecom payment services illustration"
           className="object-contain self-stretch my-auto aspect-[0.94] max-md:max-w-full"
         />
@@ -22,7 +22,7 @@ export const TelecomPaymentSection: React.FC = () => {
               quote="Dịch vụ hỗ trợ nhiệt tình và siêu nhanh chóng. Tôi đã tìm thấy một trải nghiệm khác biệt từ Global Star. Dịch vụ thanh toán hoàn hảo cho tất cả."
               author="Jesica Nguyen"
               role="CTO, HK Group"
-              avatarSrc="https://cdn.builder.io/api/v1/image/assets/2104ee8c3b1a4036982aceb97afa3b1c/881cd42bd741e9fe8947e11998f722b47ca0e385e2a9a67cae894ec8a0424df2?apiKey=2104ee8c3b1a4036982aceb97afa3b1c&"
+              avatarSrc="/logo_bot.png"
             />
           </div>
         </div>

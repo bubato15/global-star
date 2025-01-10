@@ -107,19 +107,19 @@ const reviews = [
 
 const features = [
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/707f8c383da3930601d19e0f1b08dfc657f9b0a8506bebf0e13761739602bb00?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    icon: "/icon_1.svg",
     title: "Chuyên môn vượt trội và uy tín trong ngành",
     description:
       "Đội ngũ chuyên gia có kiến thức sâu rộng, kinh nghiệm thực tiễn và khả năng đưa ra các giải pháp tài chính tối ưu, được công nhận bởi khách hàng và đối tác trong nhiều lĩnh vực.",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/b510364cc5fdae4efabe38e356a1e426c26fae82c9cbdb76bfcc4227b69a5487?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    icon: "/icon_2.svg",
     title: "Hiệu quả và giá trị bền vững",
     description:
       "Thành công trong việc cải thiện cấu trúc tài chính, tối ưu hóa nguồn vốn và nâng cao hiệu quả hoạt động, giúp doanh nghiệp phát triển bền vững và đạt được lợi thế cạnh tranh lâu dài.",
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/567828ccbca146eacf5fea95cf57d3f7b03588e54f6a09b5588c4f48d031d6c0?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+    icon: "/icon_3.svg",
     title: "Tận tâm và đồng hành cùng khách hàng",
     description:
       "Đặt lợi ích của khách hàng lên hàng đầu, xây dựng mối quan hệ bền chặt dựa trên sự tin cậy, minh bạch và cam kết mang lại giải pháp phù hợp nhất cho từng nhu cầu riêng biệt.",
@@ -383,7 +383,7 @@ export const GlobalStar = () => {
                 <div className="flex relative z-10 flex-col items-start px-20 pt-24 pb-96 -mr-32 min-h-[548px] max-md:px-5 max-md:py-24 max-md:max-w-full">
                   <img
                     loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/6933f785f19f85afc63f9052b74ecd7042e4ba287eb73d5837d8d5d9d9376b46?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
+                    src="/image_contact.png"
                     alt=""
                     className="object-cover absolute inset-0 size-full top-28"
                   />
@@ -427,7 +427,7 @@ export const GlobalStar = () => {
                   <div className="flex flex-col items-center w-[46px]">
                     <img
                       loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d79fecb7de6976b708b62e1346037645e78691f62733b24d88e3308ab81c183?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
+                      src="/icon_4.svg"
                       alt=""
                       className="object-contain aspect-square w-[46px]"
                     />
@@ -457,7 +457,7 @@ export const GlobalStar = () => {
                   <div className="flex flex-col items-center self-stretch my-auto w-[46px]">
                     <img
                       loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1fcaee7bb960efe5f77a5aae5cf5638396d3202e24baf51a643066fd2883668?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
+                      src="/icon_5.svg"
                       alt=""
                       className="object-contain aspect-square w-[46px]"
                     />
