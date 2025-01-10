@@ -101,6 +101,9 @@ const reviews = [
   }
 ];
 
+const reviews1 = reviews.slice(0, reviews.length/2);
+const reviews2 = reviews.slice(reviews.length/2);
+
 const features = [
   {
     icon: "/icon_1.svg",
@@ -163,17 +166,17 @@ export const GlobalStar = () => {
     }
   };
   
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => {
-        const newIndex = (prevIndex + 1) % 3; // Cycle through 0, 1, 2
-        handlePagingClick(newIndex);
-        return newIndex;
-      });
-    }, 10000); // Change page every 1 second
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prevIndex) => {
+  //       const newIndex = (prevIndex + 1) % 3; // Cycle through 0, 1, 2
+  //       handlePagingClick(newIndex);
+  //       return newIndex;
+  //     });
+  //   }, 10000); // Change page every 1 second
 
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, []);
+  //   return () => clearInterval(interval); // Cleanup on component unmount
+  // }, []);
 
 
   // send mail
@@ -313,15 +316,35 @@ export const GlobalStar = () => {
             Global Star?
           </h2>
           <div className="w-full overflow-x-hidden hidden md:block" ref={reviewsContainerRef}>
-            <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
-              {reviews.slice(0, reviews.length/2).map((review, index) => (
-                <ReviewCard key={index} {...review} />
-              ))}
-            </div>
-            <div className="flex gap-10 items-center self-stretch mt-8 max-md:mt-10 w-fit">
-              {reviews.slice(reviews.length/2).map((review, index) => (
-                <ReviewCard key={index} {...review} />
-              ))}
+            <style jsx>{`
+              @keyframes slide {
+                from {
+                  transform: translateX(0);
+                }
+                to {
+                  transform: translateX(-130%);
+                }
+              }
+              .animate-scroll {
+                animation: slide 30s linear infinite;
+                will-change: transform;
+              }
+            `}</style>
+
+            <div className="animate-scroll">
+              {/* First row */}
+              <div className="flex gap-10 items-center self-stretch mt-16 max-md:mt-10 ml-32 w-fit">
+                {[...reviews1].map((review, index) => (
+                  <ReviewCard key={index} {...review} />
+                ))}
+              </div>
+
+              {/* Second row */}
+              <div className="flex gap-10 items-center self-stretch mt-8 max-md:mt-10 w-fit">
+                {[...reviews2].map((review, index) => (
+                  <ReviewCard key={`duplicate-${index}`} {...review} />
+                ))}
+              </div>
             </div>
           </div>
           <div className="paging flex justify-center gap-2 mt-4 hidden md:flex">
