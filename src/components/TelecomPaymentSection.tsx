@@ -4,7 +4,7 @@ import { Testimonial } from "./Testimonial.tsx";
 
 export const TelecomPaymentSection: React.FC = () => {
   return (
-    <section className="flex overflow-hidden flex-col justify-center items-center px-16 py-28 bg-white max-md:px-5 max-md:pt-24" aria-label="Telecom Payment Services">
+    <section id = 'products' className="flex overflow-hidden flex-col justify-center items-center px-16 py-28 bg-white max-md:px-5 max-md:pt-24" aria-label="Telecom Payment Services">
       <div className="flex flex-wrap gap-10 items-center max-md:max-w-full">
         <img
           loading="lazy"
