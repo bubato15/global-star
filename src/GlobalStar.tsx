@@ -194,8 +194,8 @@ export const GlobalStar = () => {
         {
           to_name: "admin",
           message: email,
-          to_email: "datnq700@gmail.com",
-          from_email: "dat26011998@gmail.com"
+          to_email: "dungchu2212@gmail.com",
+          from_email: "dungchu2212@gmail.com"
         },
         "nMUWd_Si3nDhPefc7" //public key
       )
