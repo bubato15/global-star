@@ -213,6 +213,16 @@ export const GlobalStar = () => {
     }
   };
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
   return (
     <>
       {/* Add JSON-LD Schema */}
@@ -356,10 +366,54 @@ export const GlobalStar = () => {
               ></div>
             ))}
           </div> */}
-          <div className="md:hidden items-center self-stretch mt-16 max-md:mt-10 w-fit">
-            {reviews.map((review, index) => (
-              <ReviewCard key={index} {...review} />
-            ))}
+          <div className="md:hidden relative w-full overflow-hidden mt-10">
+            <div className="flex items-center justify-center">
+              <button 
+                onClick={prevSlide}
+                className="absolute left-0 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button> 
+              
+              <div className="relative w-full">
+                <div 
+                  className="transition-transform duration-300 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  <div className="flex">
+                    {reviews.map((review, index) => (
+                      <div key={index} className="w-full flex-shrink-0">
+                        <ReviewCard {...review} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <button 
+                onClick={nextSlide}
+                className="absolute right-0 z-10 p-2 rounded-full bg-white/80 shadow hover:bg-white"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            
+            {/* Pagination dots */}
+            <div className="flex justify-center gap-2 mt-4">
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </section>
 

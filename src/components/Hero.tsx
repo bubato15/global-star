@@ -13,7 +13,6 @@ export const Hero: React.FC = () => {
           <img className="logo" src="/logo_5.png"/>
           <img className="logo" src="/logo_6.png"/>
           <img className="logo" src="/logo_7.png"/>
-          <img className="logo" src="/logo_8.svg"/>
           {}
           <img className="logo" src="/logo_1.png"/>
           <img className="logo" src="/logo_2.png"/>
@@ -22,7 +21,6 @@ export const Hero: React.FC = () => {
           <img className="logo" src="/logo_5.png"/>
           <img className="logo" src="/logo_6.png"/>
           <img className="logo" src="/logo_7.png"/>
-          <img className="logo" src="/logo_8.svg"/>
 
           <img className="logo" src="/logo_1.png"/>
           <img className="logo" src="/logo_2.png"/>

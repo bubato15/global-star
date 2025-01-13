@@ -64,28 +64,46 @@ export const GlobalStarHero: React.FC<GlobalStarHeroProps> = ({ navigationItems,
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="navbar-dropdown"
+          aria-controls="navbar-dropdown" 
           aria-expanded={isMenuOpen}
         >
           <span className="sr-only">Open main menu</span>
-          <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
+          {isMenuOpen ? (
+            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+          )}
         </button>
       </nav>
 
-      <div className={`flex-col ${isMenuOpen ? 'flex' : 'hidden'} md:hidden`}>
-      {navigationItems.map((item, index) => (
-        <div
-          key={index}
-          className={`cursor-pointer ${
-            item.isActive ? 'font-bold text-blue-600' : 'text-gray-500'
-          }`}
-          onClick={() => onMenuClick(item.id)} // Gọi hàm onMenuClick khi click
-        >
-          {item.label}
-        </div>
-      ))}
+      <div 
+        className={`flex-col w-full text-3xl font-bold text-gray-500 md:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen 
+            ? 'opacity-100 max-h-[1000px] mt-9 -mb-8' 
+            : 'opacity-0 max-h-0 overflow-hidden'
+        }`}
+        style={{ width: '100vw', background: 'white', position: 'absolute', top: '55px', zIndex: 1000 }}
+      >
+        {[...navigationItems, { label: 'Liên hệ', id: 'link_mail', isActive: false }].map((item, index) => (
+          <div 
+            key={index}
+            role="menuitem"
+            tabIndex={0}
+            className={`gap-2.5 self-stretch px-2.5 py-5 w-full flex justify-center items-center transition-all duration-300 ease-in-out transform ${
+              isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'
+            } ${item.isActive ? 'text-white bg-blue-600' : 'bg-white'}`}
+            style={{
+              transitionDelay: `${index * 100}ms`
+            }}
+            onClick={() => onMenuClick(item.id)}
+          >
+            {item.label}
+          </div>
+        ))}
       </div>
 
       <main className="mt-20 w-full max-md:mt-10 max-md:max-w-full">

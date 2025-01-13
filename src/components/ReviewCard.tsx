@@ -8,7 +8,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
   review,
 }) => {
   return (
-    <div className="flex flex-col items-start self-stretch p-10 my-auto rounded-3xl opacity-90 bg-slate-50 min-w-[240px] w-[555px] max-md:px- max-md:max-w-full max-md:w-[350px] max-md:mb-10">
+    <div className="flex flex-col items-start self-stretch p-10 my-auto rounded-3xl opacity-90 bg-slate-50 min-w-[240px] w-[555px] max-md:px- max-md:max-w-full max-md:w-[350px]">
       <div className="flex gap-5 max-w-full w-[202px]">
         <img
           loading="lazy"
