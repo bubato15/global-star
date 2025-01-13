@@ -31,7 +31,7 @@ export const GlobalStarHero: React.FC<GlobalStarHeroProps> = ({ navigationItems,
           <a href="/" aria-label="Global Star home">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/2104ee8c3b1a4036982aceb97afa3b1c/8e8d6eaa1642f538cff9955096e470bdc4ae5d4038915c2c583683c23c6aed24?apiKey=2104ee8c3b1a4036982aceb97afa3b1c&"
+              src="/logo_home.svg"
               alt="Global Star logo"
               className="object-contain aspect-square w-[42px] max-md:w-[32px]"
               width="42"
