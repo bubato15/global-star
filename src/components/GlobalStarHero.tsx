@@ -130,7 +130,10 @@ export const GlobalStarHero: React.FC<GlobalStarHeroProps> = ({ navigationItems,
                         phát triển bền vững.
                       </p>
                     </div>
-                    <button className="flex gap-6 items-start mt-10 max-w-full text-base font-bold text-center text-white w-[218px] max-md:w-full">
+                    <button 
+                      onClick={() => onclickButton('link_mail')} 
+                      className="flex gap-6 items-start mt-10 max-w-full text-base font-bold text-center text-white w-[218px] max-md:w-full"
+                    >
                       <div className="gap-2 self-stretch px-8 py-4 bg-blue-600 rounded-lg w-[218px] max-md:px-5">
                         Tìm hiểu ngay!
                       </div>

@@ -20,7 +20,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
           <div className="text-xl font-bold tracking-tighter leading-tight text-neutral-800">
             {name}
           </div>
-          <div className="text-sm leading-loose text-gray-400">{role}</div>
+          <div className="text-sm leading-loose text-gray-400" style={{width: '300px'}}>{role}</div>
         </div>
       </div>
       <div className="self-stretch mt-6 text-base font-medium leading-6 text-neutral-800">

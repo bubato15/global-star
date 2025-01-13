@@ -266,7 +266,7 @@ export const GlobalStar = () => {
                     <img src="/Chart.png" alt="Giải pháp tài chính.png" style={{   
                       position: 'absolute',
                       top: '100px',
-                      left: 'calc(50% - 50px)'
+                      left: 'calc(50% - 80px)'
                     }}/>
                   </div>
                 </div>
@@ -482,10 +482,10 @@ export const GlobalStar = () => {
                     />
                   </div>
                   <a
-                    href="mailto:hello@mikeday.co"
+                    href="mailto:dungchu2212@gmail.com"
                     className="self-stretch my-auto text-base text-white"
                   >
-                    hello@mikeday.co
+                    dungchu2212@gmail.com
                   </a>
                 </div>
               </div>

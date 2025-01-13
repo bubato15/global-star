@@ -10,7 +10,7 @@ export const Testimonial: React.FC<TestimonialProps> = ({
   return (
     <div className="flex flex-col w-full text-base max-w-[466px] max-md:mt-10 max-md:max-w-full">
       <div className="font-medium leading-7 text-stone-950 max-md:max-w-full">
-        {quote}
+        "{quote}"
       </div>
       <div className="flex gap-4 items-center self-start mt-6 leading-tight">
         <img
