@@ -27,7 +27,7 @@ export const Achievements: React.FC = () => {
         <h2 className="text-4xl font-semibold tracking-tighter leading-tight text-center text-stone-950 max-md:max-w-full">
           {achievementsData.title}
         </h2>
-        <div className="flex flex-wrap gap-10 items-start mt-14 max-md:mt-10 max-md:max-w-full">
+        <div className="flex flex-wrap justify-center gap-10 items-start mt-14 max-md:mt-10 max-md:max-w-full">
           {achievementsData.achievements.map((achievement, index) => (
             <AchievementCard
               key={index}

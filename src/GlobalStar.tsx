@@ -14,27 +14,27 @@ import 'react-toastify/dist/ReactToastify.css';
 const teamMembers = [
   {
     image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/2a3a28a9db43dc56737e767b017c9cd5db3aa62efddc5b05890b734a71f63235?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+      "/own1.png",
     name: "Đỗ Trọng Nghĩa",
     role: "CEO, Founder",
   },
   {
     image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/f0f81796a1c33e793827c6a179ee8b1d1d7d8a7f0070c1e257ff6ad657173221?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
+      "/own2.png",
     name: "Lương Phi Hùng",
     role: "CFO",
   },
   {
     image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/7c0588b73f25afd3e26f8ee812ee90325639b9b96abdf4ee07af9621ad29cdbc?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Lê Thanh Tú",
+      "/own3.png",
+    name: "Patrick Le",
     role: "Co-Founder",
   },
   {
     image:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/25f602ffbcc8ec6994357f3d75ed0f99e934fcffc6a206266b2ce568ebb0a31c?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf",
-    name: "Mike Tran",
-    role: "CTO",
+      "/own4.png",
+    name: "Nam Tien Nguyen",
+    role: "Senior Advisor",
   },
 ];
 

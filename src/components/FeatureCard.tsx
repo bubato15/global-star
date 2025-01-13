@@ -1,5 +1,6 @@
 import * as React from "react";
 import { FeatureCardProps } from "../types/index.ts";
+import '../style/featureCard.css';
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
@@ -7,7 +8,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-wrap gap-6 items-start p-6 w-full max-md:px-5 max-md:max-w-full">
+    <div className="flex flex-wrap gap-6 items-start p-6 w-full max-md:px-5 max-md:max-w-full responsive-layout">
       <img
         loading="lazy"
         src={icon}
