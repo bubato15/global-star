@@ -546,7 +546,7 @@ export const GlobalStar = () => {
               <div className="shrink-0 mt-16 h-0.5 border-2 border-blue-500 border-solid max-md:mt-10 max-md:max-w-full" />
               <div className="flex flex-wrap gap-5 justify-between mt-10 w-full text-base text-white max-md:mr-1 max-md:max-w-full">
                 <div className="flex items-center gap-2">
-                  <span>Global Star by Mike Tran</span>
+                  <span>© Global Star by Mike Tran</span>
                 </div>
                 <div className="flex gap-10 items-start">
                   <a href="#terms">Terms & Conditions</a>
