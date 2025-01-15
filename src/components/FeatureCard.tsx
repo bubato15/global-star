@@ -8,7 +8,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-wrap gap-6 items-start p-6 w-full max-md:px-5 max-md:max-w-full responsive-layout">
+    <div className="flex flex-wrap gap-6 items-start p-6 w-full max-md:px-5 max-md:max-w-full">
       <img
         loading="lazy"
         src={icon}

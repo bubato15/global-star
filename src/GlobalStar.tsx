@@ -10,6 +10,7 @@ import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import './style/featureCard.css';
 
 const teamMembers = [
   {
@@ -256,7 +257,7 @@ export const GlobalStar = () => {
         <TelecomPaymentSection />
 
         {/* Features Section */}
-        <section id="intro" className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
+        <section id="intro" className="overflow-hidden px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full justify-center ">
           <div className="flex gap-5 max-md:flex-col justify-center">
             <div className="flex flex-col w-4/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col max-md:mt-10 max-md:max-w-full">
@@ -283,7 +284,7 @@ export const GlobalStar = () => {
               </div>
             </div>
             <div className="flex flex-col ml-5 w-4/12 max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col mt-6 w-full max-md:mt-10 max-md:max-w-full">
+              <div className="flex flex-col mt-6 w-full max-md:mt-10 max-md:max-w-full responsive-layout">
                 {features.map((feature, index) => (
                   <FeatureCard key={index} {...feature} />
                 ))}
