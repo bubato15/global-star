@@ -118,7 +118,7 @@ export const GlobalStarHero: React.FC<GlobalStarHeroProps> = ({ navigationItems,
               <PaymentCard
                 cardType="Mastercard"
                 cardNumber="0259"
-                amount="+ $4 843.93"
+                amount="+ $68 392 798"
               />
             </div>
           </div>

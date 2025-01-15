@@ -464,7 +464,7 @@ export const GlobalStar = () => {
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/56930363297e75388766a7eee0e9f881691def5a9f5211bdad2346d4c335d6f1?placeholderIfAbsent=true&apiKey=ca0f76b4bd974916a748ef3dbbcaecaf"
                     alt=""
-                    className="object-contain max-w-full aspect-[1.92] fill-white w-[146px]"
+                    className="object-contain max-w-full aspect-[1.92] fill-white w-[146px] max-md:ml-10"
                   />
                 </div>
               </div>
