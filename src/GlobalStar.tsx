@@ -232,8 +232,8 @@ export const GlobalStar = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Global Star",
-            "url": "https://globalstar.vn",
-            "logo": "https://globalstar.vn/logo.png",
+            "url": "https://theglobalstar.vn",
+            "logo": "https://theglobalstar.vn/logo.png",
             "description": "Đối tác tài chính và thanh toán viễn thông hàng đầu Việt Nam",
             "address": {
               "@type": "PostalAddress",
@@ -419,7 +419,7 @@ export const GlobalStar = () => {
 
         {/* Contact Form Section */}
         <section id = "link_mail" className="flex overflow-hidden flex-col justify-center items-center px-16 py-28 w-full bg-white max-md:px-5 max-md:pt-24 max-md:max-w-full">
-          <div className="pl-20 max-w-full bg-blue-600 rounded-2xl w-[1181px] max-md:pl-5">
+          <div className="pl-20 max-w-full bg-blue-600 rounded-2xl w-[1181px] max-md:pl-5 max-md:pr-5">
             <div className="flex gap-5 max-md:flex-col">
               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col justify-center self-stretch my-auto mr-0 w-full text-base max-md:mt-10 max-md:max-w-full">
@@ -431,21 +431,21 @@ export const GlobalStar = () => {
                     hệ với bạn để trao đổi chi tiết, giúp bạn đưa ra quyết định
                     thông minh và hiệu quả nhất.
                   </p>
-                  <form onSubmit={sendEmail} className="flex flex-wrap gap-4 mt-7 max-w-full rounded-[100px] w-[543px]">
-                    <div className="flex flex-col grow shrink-0 self-start mt-4 font-medium text-white basis-0 w-fit">                 
-                    <input
-                      onChange={(e) => setEmail(e.target.value)}
-                      type="email"
-                      id="email"
-                      value={email}
-                      className="shrink-0 mt-4 border-b-4 border-solid border-stone-300 bg-transparent focus:outline-none focus:border-blue-500 text-white placeholder:text-white placeholder:text-xl pb-[10px] font-normal"
-                      aria-label="Enter your email"
-                      placeholder="Enter your email"
-                    />
+                  <form onSubmit={sendEmail} className="flex flex-wrap gap-4 mt-7 max-w-full rounded-[100px] w-[543px] max-md:block">
+                    <div className="flex flex-col grow shrink-0 self-start mt-4 font-medium text-white basis-0 w-fit max-md:w-full">                 
+                      <input
+                        onChange={(e) => setEmail(e.target.value)}
+                        type="email"
+                        id="email"
+                        value={email}
+                        className="shrink-0 mt-4 border-b-4 border-solid border-stone-300 bg-transparent focus:outline-none focus:border-blue-500 text-white placeholder:text-white placeholder:text-xl pb-[10px] font-normal w-full"
+                        aria-label="Enter your email"
+                        placeholder="Enter your email"
+                      />
                     </div>
                     <button
                       type="submit"
-                      className="flex-1 shrink gap-2 self-stretch px-8 py-4 font-bold text-center text-blue-600 whitespace-nowrap bg-white min-h-[56px] rounded-[100px] max-md:px-5"
+                      className="flex-1 shrink gap-2 self-stretch px-8 py-4 font-bold text-center text-blue-600 whitespace-nowrap bg-white min-h-[56px] rounded-[100px] max-md:px-5 max-md:w-full max-md:mt-5"
                     >
                       Gửi
                     </button>
@@ -507,26 +507,26 @@ export const GlobalStar = () => {
                   </div>
                   <div className="flex flex-col justify-center text-base text-white min-w-[240px] max-md:max-w-full">
                     <div className="flex gap-3 items-start max-md:max-w-full">
-                      <div className="text-right w-[108px]">Trụ sở chính: </div>
+                      <div className="text-right w-[108px] max-md:text-left">Trụ sở chính: </div>
                       <div className="leading-6 w-[360px]">
                         Biệt thự E24 N05 khu đô thị Dịch Vọng, Cầu Giấy, Hà Nội
                       </div>
                     </div>
                     <div className="flex gap-3 items-start mt-2 max-md:max-w-full">
-                      <div className="text-right w-[108px]">VP Miền Bắc:</div>
+                      <div className="text-right w-[108px] max-md:text-left">VP Miền Bắc:</div>
                       <div className="leading-6 w-[360px]">
                         Tầng 2 toà nhà Imedia, 508 Trường Chinh, Đống Đa , Hà Nội.
                       </div>
                     </div>
                     <div className="flex gap-3 items-start mt-2 max-md:max-w-full">
-                      <div className="text-right w-[108px]">VP Miền Nam: </div>
+                      <div className="text-right w-[108px] max-md:text-left">VP Miền Nam: </div>
                       <div className="leading-6 w-[360px]">
                         Tầng 3 toà nhà MB Bank thị xã Chơn Thành, tỉnh Bình Phước.
                       </div>
                     </div>
                   </div>
                 </address>
-                <div className="flex gap-3.5 items-center">
+                <div className="flex gap-3.5 items-center max-md:flex-col">
                   <div className="flex flex-col items-center self-stretch my-auto w-[46px]">
                     <img
                       loading="lazy"
