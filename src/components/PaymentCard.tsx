@@ -14,6 +14,6 @@ export const PaymentCard: React.FC<CardProps> = ({ cardType, cardNumber, amount 
         <div className="mt-2">{`${cardType} ~ ${cardNumber}`}</div>
       </div>
     </div>
-    <div className="text-sm font-bold text-lime-600">{amount}</div>
+    <div className="text-sm font-bold text-lime-600 w-[80px]">{amount}</div>
   </div>
 );
